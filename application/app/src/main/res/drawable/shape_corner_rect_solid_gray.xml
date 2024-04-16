@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--ine（线）、rectangle（矩形, shape默认就是矩形）、oval（椭圆、原形）、 ring（圆环）-->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+       android:shape="rectangle">
+    <corners android:radius="3dp"/>
+    <solid android:color="@color/gray2"/>
+</shape>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- character创建模板时原始字段布局id   -->
+    <item name="character_one" type="id"/>
+    <item name="character_two" type="id"/>
+    <item name="character_thr" type="id"/>
+    <!-- resource创建模板时原始字段布局id   -->
+    <item name="resource_one" type="id"/>
+    <item name="resource_two" type="id"/>
+    <item name="resource_thr" type="id"/>
+    <item name="resource_fou" type="id"/>
+    <item name="resource_fiv" type="id"/>
+
+    <item name="dialog_rely_text" type="id"/>
+</resources>

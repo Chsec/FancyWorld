@@ -1,0 +1,72 @@
+<resources>
+    <string name="app_name">application</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <!--应用常量-->
+    <string name="default_book">默认书籍</string>
+    <string name="activity_main_main">主页</string>
+    <string name="activity_main_resource">资源</string>
+    <string name="activity_main_character">角色</string>
+    <string name="activity_main_mainorg">组织</string>
+    <string name="activity_main_minororg">其他组织</string>
+    <!--character-->
+    <string name="character_template_name">当前模板</string>
+    <string name="character_one">姓名</string>
+    <string name="character_two">称呼</string>
+    <string name="character_three">年龄</string>
+    <string name="character_filter_first_default">默认角色模板</string>
+    <string name="character_filter_second_default">默认角色模板</string>
+    <string name="character_filter_third_default">默认角色模板</string>
+    <string name="character_default_template_name">默认角色模板</string>
+    <!--resource-->
+    <string name="resource_template_name">当前模板</string>
+    <string name="resource_one">资源名称</string>
+    <string name="resource_two">品质等阶</string>
+    <string name="resource_three">资源描述</string>
+    <string name="resource_four">二级类型</string>
+    <string name="resource_five">价值评分</string>
+    <string name="resource_default_template_name">默认资源模板</string>
+    <!--setting-->
+    <string name="setting_template_title">设定名称</string>
+    <string name="setting_rv_title">当前设定项说明模板创建</string>
+
+    <!--custom-->
+    <string name="template_rv_item_name">字段名称</string>
+    <string name="login">登录</string>
+    <string name="register">注册</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="loginbtn_db">数据库</string>
+    <string name="logintv_db">数据库路径</string>
+    <string name="account">账户</string>
+    <string name="login_passwd_tip">填写密码</string>
+    <string name="login_pass">密码</string>
+    <string name="message">通讯录</string>
+    <string name="contacts">档案库</string>
+    <string name="discovery">发现</string>
+    <string name="me">设置</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="login_account_tip">你的手机号码</string>
+    <string name="register_toolbar">点击返回登录</string>
+    <string name="login_toolbar">点击返回注册</string>
+    <string name="frag_resource_type1">所有</string>
+    <string name="template_add_field">重命名模板</string>
+    <string name="template_rv_tv">字段名称</string>
+    <string name="menu_char_item_top">置顶</string>
+    <string name="menu_char_item_mark">标记</string>
+    <string name="menu_char_item_multiple">多选</string>
+    <!--应用固有属性-->
+    <string name="menu_character">角色模板</string>
+
+    <string name="item_char_temp_et">请输入字段名称</string>
+    <string name="must_fill_tip">必填字段</string>
+    <string name="table_template_item_set_tip">个别类型不支持依赖</string>
+    <string name="menu_change_user">切换用户</string>
+    <string name="menu_software_lock">软件锁</string>
+    <string name="menu_exit_login">退出登录</string>
+    <string name="menu_software_set">软件设置</string>
+    <string name="forget_password">忘记密码？</string>
+    <string name="pre_selected_book">当前书籍</string>
+    <string name="resource_sort_title">资源种类</string>
+
+</resources>

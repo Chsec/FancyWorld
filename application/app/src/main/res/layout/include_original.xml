@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:id="@+id/original"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginStart="5dp">
+
+        <ImageView
+                android:id="@+id/star"
+                android:layout_width="15dp"
+                android:layout_height="match_parent"
+                android:visibility="invisible"
+                android:src="@drawable/vector_must_fill"/>
+
+        <TextView
+                android:id="@+id/key"
+                android:layout_width="75dp"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"/>
+
+        <com.xuexiang.xui.widget.edittext.materialedittext.MaterialEditText
+                android:id="@+id/value"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="11sp"
+                android:hint="固定字段重命名"
+                app:met_allowEmpty="false"
+                android:layout_weight="9"/>
+
+        <ImageButton
+                android:id="@+id/set"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/vector_setting"
+                android:background="@color/clear_lucite"
+                android:layout_weight="1"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="15dp"
+            android:orientation="horizontal"
+            android:layout_marginStart="45dp">
+
+        <com.xuexiang.xui.widget.button.switchbutton.SwitchButton
+                android:id="@+id/fill"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:textSize="8sp"
+                android:paddingEnd="10dp"
+                android:paddingStart="1dp"
+                app:swb_textOn="必填"
+                app:swb_textOff="可选"/>
+
+        <TextView
+                android:id="@+id/type"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:textSize="11sp"
+                android:layout_weight="1"/>
+
+        <TextView
+                android:id="@+id/rely"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:textSize="11sp"
+                android:layout_weight="1"/>
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/item_char_temp_line"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="horizontal"
+              android:layout_marginBottom="1dp"
+              android:background="@color/gray4">
+
+    <TextView
+            android:layout_width="75dp"
+            android:layout_height="match_parent"
+            android:text="@string/template_rv_item_name"
+            android:gravity="center_vertical"/>
+
+    <com.xuexiang.xui.widget.edittext.materialedittext.MaterialEditText
+            android:id="@+id/value"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="9"
+            android:hint="@string/item_char_temp_et"/>
+
+    <ImageButton
+            android:id="@+id/add"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="0dp"
+            android:src="@mipmap/add"
+            android:background="@color/clear_lucite"/>
+
+    <ImageButton
+            android:id="@+id/del"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/vector_delete"
+            android:background="@color/clear_lucite"
+            android:layout_weight="1"/>
+
+    <ImageButton
+            android:id="@+id/order"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:src="@mipmap/order"
+            android:background="@color/clear_lucite"
+            android:layout_weight="1"/>
+
+</LinearLayout>

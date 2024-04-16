@@ -1,0 +1,13 @@
+<resources>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="login_bktv_height">30dp</dimen>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="main_bottom_iv_horizontal_size">28dp</dimen>
+    <dimen name="main_bottom_iv_vertical_size">24dp</dimen>
+    <dimen name="temp_head_height">35dp</dimen>
+    <dimen name="item_char_temp_height">60dp</dimen>
+    <dimen name="item_table_utilize1_common_height">45dp</dimen>
+    <dimen name="item_table_utilize1_text_height">100dp</dimen>
+    <dimen name="item_table_utilize1_title_weight">100dp</dimen>
+</resources>

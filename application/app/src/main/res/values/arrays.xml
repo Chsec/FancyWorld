@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--TableTemplate对象的tempOwner支持值-->
+    <string-array name="table_template_owner">
+        <item>0</item>    <!--Character自定义模板实体-->
+        <item>1</item>    <!--Resource自定义模板实体-->
+        <item>2</item>    <!--Character原始字段重命名实体-->
+        <item>3</item>    <!--Resource原始字段重命名实体-->
+        <item>4</item>    <!--Setter设定器的设定实体-->
+        <item>5</item>    <!--UnitSystem自定义实体-->
+    </string-array>
+
+    <!--TreeTemplate对象的tempOwner支持值-->
+    <string-array name="tree_template_owner">
+        <item>0</item>    <!--setting-->
+    </string-array>
+
+    <!--TableTemplate对象的itemType索引对应值-->
+    <string-array name="table_template_item_type">
+        <item>字符串型</item>
+        <item>数字类型</item>
+        <item>文本类型</item>
+        <item>引用设定</item>
+        <item>引用单位</item>
+    </string-array>
+
+    <!-- StateRecord的key-->
+    <string-array name="book_state_record_key">
+        <item>character_filter_fist</item>
+        <item>character_filter_second</item>
+        <item>character_filter_third</item>
+        <item>resource_filter_first</item>
+        <item>resource_filter_second</item>
+        <item>resource_filter_third</item>
+    </string-array>
+
+    <!-- StateRecord的key-->
+    <string-array name="user_state_record_key">
+        <item>pre_book</item>
+    </string-array>
+
+    <!-- StateRecord的key-->
+    <string-array name="global_state_record_key">
+        <item>login_user</item>
+    </string-array>
+
+    <string-array name="setter">
+        <item>等级设定器</item>
+        <item>单位设定器</item>
+    </string-array>
+</resources>

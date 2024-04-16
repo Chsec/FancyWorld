@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                   xmlns:tools="http://schemas.android.com/tools"
+                                                   xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="match_parent"
+                                                   android:orientation="vertical"
+                                                   android:background="@color/gray4"
+                                                   tools:context=".view.character.CharacterFragment">
+
+    <!--信息展示区-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/character_display"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="1dp"
+            android:background="#D8BFD8"
+            android:elevation="10dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+    <!--侧边功能栏-->
+    <LinearLayout
+            android:id="@+id/character_fun"
+            android:layout_width="50dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            android:background="@color/yellow1"
+            app:layout_constraintTop_toBottomOf="@+id/character_display"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+    </LinearLayout>
+
+    <!--多选功能栏，默认不可见-->
+    <LinearLayout
+            android:id="@+id/character_mul"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:orientation="horizontal"
+            android:background="@color/white"
+            app:layout_constraintTop_toBottomOf="@+id/character_display"
+            app:layout_constraintStart_toEndOf="@id/character_fun"
+            app:layout_constraintEnd_toEndOf="parent">
+
+        <Button
+                android:id="@+id/character_mul_del"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="删除"/>
+
+        <Button
+                android:id="@+id/character_mul_cancel"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="取消"/>
+
+        <Button
+                android:id="@+id/character_mul_invert"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="反选"/>
+
+        <Button
+                android:id="@+id/character_mul_all"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="全选"/>
+
+    </LinearLayout>
+
+    <!--筛选栏-->
+    <LinearLayout
+            android:id="@+id/character_filtrate"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:orientation="horizontal"
+            android:background="@color/white"
+            app:layout_constraintTop_toBottomOf="@+id/character_display"
+            app:layout_constraintStart_toEndOf="@id/character_fun"
+            app:layout_constraintEnd_toEndOf="parent">
+
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+                android:id="@+id/character_fit1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:button="@null"
+                android:drawablePadding="1dp"
+                android:drawableEnd="@drawable/selector_character_filter"
+                android:textColor="@drawable/selector_text_stock"
+                android:paddingEnd="6dp"
+                android:paddingStart="6dp"
+                android:gravity="center"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:textSize="15sp"
+                android:layout_weight="1"/>
+
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+                android:id="@+id/character_fit2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:button="@null"
+                android:drawablePadding="10dp"
+                android:drawableEnd="@drawable/selector_character_filter"
+                android:paddingEnd="6dp"
+                android:paddingStart="0dp"
+                android:gravity="center"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:textColor="@drawable/selector_text_stock"
+                android:textSize="15sp"
+                android:layout_weight="1"/>
+
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+                android:id="@+id/character_fit3"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:button="@null"
+                android:drawablePadding="10dp"
+                android:drawableEnd="@drawable/selector_character_filter"
+                android:paddingEnd="20dp"
+                android:paddingStart="0dp"
+                android:gravity="center"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:textColor="@drawable/selector_text_stock"
+                android:textSize="15sp"
+                android:layout_weight="1"/>
+
+        <View
+                android:layout_width="1dip"
+                android:layout_height="29dp"
+                android:layout_gravity="center_vertical"
+                android:background="@color/gray3"/>
+
+        <ImageView
+                android:id="@+id/character_add"
+                android:layout_width="35dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/vector_add_character"
+                android:enabled="false"/>
+
+    </LinearLayout>
+
+    <!--数据展示区-->
+    <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/character_rv"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="3dp"
+            android:scrollbars="none"
+            app:layout_constraintTop_toBottomOf="@id/character_filtrate"
+            app:layout_constraintStart_toEndOf="@+id/character_fun"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+    <!--字母索引栏-->
+    <com.chw.application.widget.bar.LetterSidebarView
+            android:id="@+id/character_letter_bar"
+            android:layout_width="20dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="40dp"
+            app:layout_constraintTop_toBottomOf="@+id/character_filtrate"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+    <!--字母索引栏选中字母-->
+    <TextView
+            android:id="@+id/character_letter_tip"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+    <com.xuexiang.xui.widget.progress.loading.ARCLoadingView
+            android:id="@+id/character_wait"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="20dp"
+            app:lv_auto="false"
+            app:lv_has_icon="false"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

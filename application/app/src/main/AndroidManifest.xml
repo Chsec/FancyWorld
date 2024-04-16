@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-sdk tools:overrideLibrary="com.z.fileselectorlib"/>
+    <!-- 外部存储的写权限 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/> <!-- 安卓11额外权限 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission
+            android:name="android.permission.MANAGE_EXTERNAL_STORAGE"
+            tools:ignore="ScopedStorage"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO"/>
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES"/>
+    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO"/>
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+
+    <application
+            android:name=".App"
+            android:allowBackup="true"
+            android:dataExtractionRules="@xml/data_extraction_rules"
+            android:fullBackupContent="@xml/backup_rules"
+            android:icon="@mipmap/ic_launcher"
+            android:label="@string/app_name"
+            android:preserveLegacyExternalStorage="true"
+            android:requestLegacyExternalStorage="true"
+            android:roundIcon="@mipmap/ic_launcher_round"
+            android:supportsRtl="true"
+            android:theme="@style/Theme.Application.NoActionBar"
+            tools:targetApi="31">
+        <!-- 表示适配分区存储特性 -->
+        <meta-data
+                android:name="ScopedStorage"
+                android:value="true"/>
+
+        <activity
+                android:name=".view.SplashActivity"
+                android:exported="true"
+                android:label="GuideActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity
+                android:name=".view.EntranceActivity"
+                android:exported="false"/>
+
+        <activity
+                android:name=".view.MainActivity"
+                android:exported="false"/>
+        <activity
+                android:name=".view.character.CharTableActivity"
+                android:exported="false"/>
+        <activity
+                android:name=".view.character.CharAddActivity"
+                android:exported="false"/>
+        <activity
+                android:name=".view.character.CharDetailActivity"
+                android:exported="false"/>
+        <activity
+                android:name=".view.resource.ResoTableActivity"
+                android:exported="false"/>
+        <activity
+                android:name=".view.character.SearchActivity"
+                android:exported="false"/>
+        <activity
+                android:name=".view.home.setter.SetterActivity"
+                android:exported="false"/>
+
+    </application>
+
+</manifest>

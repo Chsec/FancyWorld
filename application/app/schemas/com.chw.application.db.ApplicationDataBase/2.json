@@ -1,0 +1,129 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 2,
+    "identityHash": "da690f3dd8b531d72a9475fcac8af494",
+    "entities": [
+      {
+        "tableName": "user",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`USER_ID` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `USER_NAME` TEXT NOT NULL, `USER_PWD` TEXT, `TYPE` INTEGER)",
+        "fields": [
+          {
+            "fieldPath": "userID",
+            "columnName": "USER_ID",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "userName",
+            "columnName": "USER_NAME",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "userPwd",
+            "columnName": "USER_PWD",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "userType",
+            "columnName": "TYPE",
+            "affinity": "INTEGER",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "USER_ID"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "DATA_REPO",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`ID` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `TEMP_TYPE` TEXT, `ITEM_ORDER` INTEGER NOT NULL, `JASON_NAME` TEXT)",
+        "fields": [
+          {
+            "fieldPath": "itemId",
+            "columnName": "ID",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tempType",
+            "columnName": "TEMP_TYPE",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "itemOrder",
+            "columnName": "ITEM_ORDER",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "jsonDate",
+            "columnName": "JASON_NAME",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "ID"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "DATA_TEMPLATE",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`TEMP_TYPE` TEXT NOT NULL, `KEY_NAME` TEXT NOT NULL, `KEY_LENGTH` INTEGER NOT NULL, `KEY_COMMENT` TEXT, PRIMARY KEY(`TEMP_TYPE`, `KEY_NAME`))",
+        "fields": [
+          {
+            "fieldPath": "tempType",
+            "columnName": "TEMP_TYPE",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "keyName",
+            "columnName": "KEY_NAME",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "KeyLength",
+            "columnName": "KEY_LENGTH",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "keyComment",
+            "columnName": "KEY_COMMENT",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "TEMP_TYPE",
+            "KEY_NAME"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'da690f3dd8b531d72a9475fcac8af494')"
+    ]
+  }
+}

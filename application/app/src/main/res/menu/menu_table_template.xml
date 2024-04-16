@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+            android:id="@+id/menu_temp_new"
+            android:title="新建模板"/>
+    <item
+            android:id="@+id/menu_temp_delete"
+            android:title="删除模板"/>
+    <item
+            android:id="@+id/menu_temp_rename"
+            android:title="重命名模板"/>
+</menu>

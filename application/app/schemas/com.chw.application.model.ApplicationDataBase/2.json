@@ -1,0 +1,648 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 2,
+    "identityHash": "22a84dfa74d3b9cc42c9615d851e277c",
+    "entities": [
+      {
+        "tableName": "User",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`USER_ID` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `USER_NAME` TEXT, `USER_PWD` TEXT, `TYPE` INTEGER, `USER_STATE` INTEGER, `USER_SECRET` TEXT)",
+        "fields": [
+          {
+            "fieldPath": "userID",
+            "columnName": "USER_ID",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "userName",
+            "columnName": "USER_NAME",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "userPwd",
+            "columnName": "USER_PWD",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "userType",
+            "columnName": "TYPE",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "userState",
+            "columnName": "USER_STATE",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "userSecret",
+            "columnName": "USER_SECRET",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "USER_ID"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "t_book",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`book_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `book_name` TEXT, `user_flag` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "bookId",
+            "columnName": "book_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "bookName",
+            "columnName": "book_name",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "userFlag",
+            "columnName": "user_flag",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "book_id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "TableTemplate",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`ITEM_ID` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `ITEM_NAME` TEXT, `ITEM_TYPE` INTEGER NOT NULL, `ITEM_RELY` INTEGER NOT NULL, `ITEM_ORDER` INTEGER NOT NULL, `ITEM_REFER` INTEGER NOT NULL, `ITEM_FILL` INTEGER NOT NULL, `ITEM_COMMENT` TEXT, `TABLE_OWNER` TEXT, `TABLE_FLAG` INTEGER NOT NULL, `TABLE_NAME` TEXT, `BOOK_FLAG` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "itemId",
+            "columnName": "ITEM_ID",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "itemName",
+            "columnName": "ITEM_NAME",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "itemType",
+            "columnName": "ITEM_TYPE",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "itemRely",
+            "columnName": "ITEM_RELY",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "itemOrder",
+            "columnName": "ITEM_ORDER",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "itemRefer",
+            "columnName": "ITEM_REFER",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "itemFill",
+            "columnName": "ITEM_FILL",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "itemComment",
+            "columnName": "ITEM_COMMENT",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "tableOwner",
+            "columnName": "TABLE_OWNER",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "tableFlag",
+            "columnName": "TABLE_FLAG",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tableName",
+            "columnName": "TABLE_NAME",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "bookFlag",
+            "columnName": "BOOK_FLAG",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "ITEM_ID"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "t_character_data",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`data_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `data_key` INTEGER NOT NULL, `data_content` TEXT, `book_flag` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "dataId",
+            "columnName": "data_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "dataKey",
+            "columnName": "data_key",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "dataContent",
+            "columnName": "data_content",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "bookFlag",
+            "columnName": "book_flag",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "data_id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "TreeTemplate",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`NODE_ID` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `NODE_VALUE` TEXT, `NODE_ROOT` INTEGER NOT NULL, `NODE_PARENT` INTEGER NOT NULL, `NODE_DEPTH` INTEGER NOT NULL, `NODE_ORDER` INTEGER NOT NULL, `NODE_EXPEND` INTEGER NOT NULL, `GROUP_TABLE` INTEGER NOT NULL, `GROUP_OWNER` TEXT, `GROUP_FLAG` INTEGER NOT NULL, `GROUP_NAME` TEXT, `BOOK_FLAG` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "nodeId",
+            "columnName": "NODE_ID",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nodeValue",
+            "columnName": "NODE_VALUE",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "nodeRoot",
+            "columnName": "NODE_ROOT",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nodeParent",
+            "columnName": "NODE_PARENT",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nodeDepth",
+            "columnName": "NODE_DEPTH",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nodeOrder",
+            "columnName": "NODE_ORDER",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nodeExpend",
+            "columnName": "NODE_EXPEND",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "groupTable",
+            "columnName": "GROUP_TABLE",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "groupOwner",
+            "columnName": "GROUP_OWNER",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "groupFlag",
+            "columnName": "GROUP_FLAG",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "groupName",
+            "columnName": "GROUP_NAME",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "bookFlag",
+            "columnName": "BOOK_FLAG",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "NODE_ID"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "t_character",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`char_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `char_group` TEXT, `char_state` TEXT, `char_top` TEXT, `char_letter` TEXT, `char_refer` INTEGER NOT NULL, `char_profile` TEXT, `char_show_a` TEXT, `char_show_b` TEXT, `char_show_c` TEXT, `table_flag` INTEGER NOT NULL, `book_flag` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "charId",
+            "columnName": "char_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "charGroup",
+            "columnName": "char_group",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "charState",
+            "columnName": "char_state",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "charTop",
+            "columnName": "char_top",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "charLetter",
+            "columnName": "char_letter",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "charRefer",
+            "columnName": "char_refer",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "charProfile",
+            "columnName": "char_profile",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "charShowA",
+            "columnName": "char_show_a",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "charShowB",
+            "columnName": "char_show_b",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "charShowC",
+            "columnName": "char_show_c",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "tableFlag",
+            "columnName": "table_flag",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "bookFlag",
+            "columnName": "book_flag",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "char_id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "t_resource",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`reso_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `reso_count` INTEGER NOT NULL, `reso_refer` INTEGER NOT NULL, `reso_show_a` TEXT, `reso_show_b` TEXT, `reso_show_c` TEXT, `reso_show_d` TEXT, `reso_show_e` TEXT, `table_flag` INTEGER NOT NULL, `book_flag` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "resoId",
+            "columnName": "reso_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "resoCount",
+            "columnName": "reso_count",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "resoRefer",
+            "columnName": "reso_refer",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "resoShowA",
+            "columnName": "reso_show_a",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "resoShowB",
+            "columnName": "reso_show_b",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "resoShowC",
+            "columnName": "reso_show_c",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "resoShowD",
+            "columnName": "reso_show_d",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "resoShowE",
+            "columnName": "reso_show_e",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "tableFlag",
+            "columnName": "table_flag",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "bookFlag",
+            "columnName": "book_flag",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "reso_id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "t-resource_data",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`data_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `data_key` INTEGER NOT NULL, `data_content` TEXT, `book_flag` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "dataId",
+            "columnName": "data_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "dataKey",
+            "columnName": "data_key",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "dataContent",
+            "columnName": "data_content",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "bookFlag",
+            "columnName": "book_flag",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "data_id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "setting",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`SETTER_ID` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `SETTING_NAME` TEXT, `SETTING_FLAG` INTEGER NOT NULL, `SETTING_ORDER` INTEGER NOT NULL, `SETTING_SORT` INTEGER NOT NULL, `SETTING_OWNER` TEXT, `BOOK_FLAG` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "settingId",
+            "columnName": "SETTER_ID",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "settingName",
+            "columnName": "SETTING_NAME",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "settingFlag",
+            "columnName": "SETTING_FLAG",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "settingOrder",
+            "columnName": "SETTING_ORDER",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "settingSort",
+            "columnName": "SETTING_SORT",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "settingOwner",
+            "columnName": "SETTING_OWNER",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "bookFlag",
+            "columnName": "BOOK_FLAG",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "SETTER_ID"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "SettingSort",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`SORT_ID` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `SORT_NAME` TEXT, `SORT_FLAG` INTEGER NOT NULL, `SORT_ORDER` INTEGER NOT NULL, `SORT_OWNER` TEXT, `BOOK_ID` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "sortId",
+            "columnName": "SORT_ID",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sortName",
+            "columnName": "SORT_NAME",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "sortFlag",
+            "columnName": "SORT_FLAG",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sortOrder",
+            "columnName": "SORT_ORDER",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sortOwner",
+            "columnName": "SORT_OWNER",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "bookId",
+            "columnName": "BOOK_ID",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "SORT_ID"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "StateRecord",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`STATE_ID` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `STATE_TYPE` INTEGER NOT NULL, `STATE_MAP` TEXT, `FLAG` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "stateId",
+            "columnName": "STATE_ID",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "stateType",
+            "columnName": "STATE_TYPE",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "stateMap",
+            "columnName": "STATE_MAP",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "flag",
+            "columnName": "FLAG",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "STATE_ID"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '22a84dfa74d3b9cc42c9615d851e277c')"
+    ]
+  }
+}

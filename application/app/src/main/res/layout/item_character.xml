@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                   xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="60dp"
+                                                   android:orientation="vertical"
+                                                   android:layout_marginStart="3dp">
+
+
+    <com.xuexiang.xui.widget.imageview.RadiusImageView
+            android:id="@+id/display1_image"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:contentDescription="@null"
+            app:riv_corner_radius="3dp"
+            app:riv_is_touch_select_mode_enabled="false"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+
+    <TextView
+            android:id="@+id/display1_show_f"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:background="@color/white"
+            android:textSize="20sp"
+            android:gravity="center_vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/display1_image"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+            android:id="@+id/display1_show_s"
+            android:layout_width="160dp"
+            android:layout_height="30dp"
+            android:gravity="center_vertical"
+            android:background="@color/white"
+            app:layout_constraintTop_toBottomOf="@+id/display1_show_f"
+            app:layout_constraintStart_toEndOf="@+id/display1_image"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <TextView
+            android:id="@+id/display1_show_t"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:gravity="center_vertical"
+            android:background="@color/white"
+            app:layout_constraintStart_toEndOf="@id/display1_show_s"
+            app:layout_constraintTop_toBottomOf="@id/display1_show_f"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+    <CheckBox
+            android:id="@+id/display1_multiple"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/green2"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,472 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 2,
+    "identityHash": "dd930c43060cf97abcd09b45a43af889",
+    "entities": [
+      {
+        "tableName": "UserBean",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`USER_ID` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `USER_NAME` TEXT, `USER_PWD` TEXT, `TYPE` INTEGER, `USER_STATE` INTEGER, `USER_SECRET` TEXT)",
+        "fields": [
+          {
+            "fieldPath": "userID",
+            "columnName": "USER_ID",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "userName",
+            "columnName": "USER_NAME",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "userPwd",
+            "columnName": "USER_PWD",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "userType",
+            "columnName": "TYPE",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "userState",
+            "columnName": "USER_STATE",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "userSecret",
+            "columnName": "USER_SECRET",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "USER_ID"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "BookBean",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`BOOK_ID` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `BOOK_NAME` TEXT, `USER_FLAG` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "bookId",
+            "columnName": "BOOK_ID",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "bookName",
+            "columnName": "BOOK_NAME",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "userFlag",
+            "columnName": "USER_FLAG",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "BOOK_ID"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "TableTemplate",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`ITEM_ID` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `ITEM_NAME` TEXT, `ITEM_TYPE` INTEGER NOT NULL, `ITEM_RELY` INTEGER NOT NULL, `ITEM_ORDER` INTEGER NOT NULL, `ITEM_REFER` INTEGER NOT NULL, `ITEM_FILL` INTEGER NOT NULL, `ITEM_COMMENT` TEXT, `BOOK_FLAG` INTEGER NOT NULL, `TEMP_FLAG` TEXT, `TEMP_NAME` TEXT, `TEMP_OWNER` TEXT)",
+        "fields": [
+          {
+            "fieldPath": "itemId",
+            "columnName": "ITEM_ID",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "itemName",
+            "columnName": "ITEM_NAME",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "itemType",
+            "columnName": "ITEM_TYPE",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "itemRely",
+            "columnName": "ITEM_RELY",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "itemOrder",
+            "columnName": "ITEM_ORDER",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "itemRefer",
+            "columnName": "ITEM_REFER",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "itemFill",
+            "columnName": "ITEM_FILL",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "itemComment",
+            "columnName": "ITEM_COMMENT",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "bookFlag",
+            "columnName": "BOOK_FLAG",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tempFlag",
+            "columnName": "TEMP_FLAG",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "tempName",
+            "columnName": "TEMP_NAME",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "tempOwner",
+            "columnName": "TEMP_OWNER",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "ITEM_ID"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "TreeTemplate",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`NODE_ID` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `NODE_TABLE` INTEGER NOT NULL, `NODE_GROUP` TEXT, `NODE_SORT` TEXT, `NODE_ROOT` INTEGER NOT NULL, `NODE_PARENT` INTEGER NOT NULL, `NODE_DEPTH` INTEGER NOT NULL, `NODE_ORDER` INTEGER NOT NULL, `NODE_EXPEND` INTEGER NOT NULL, `NODE_VALUE` TEXT)",
+        "fields": [
+          {
+            "fieldPath": "nodeId",
+            "columnName": "NODE_ID",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nodeTable",
+            "columnName": "NODE_TABLE",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nodeGroup",
+            "columnName": "NODE_GROUP",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "nodeSort",
+            "columnName": "NODE_SORT",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "nodeRoot",
+            "columnName": "NODE_ROOT",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nodeParent",
+            "columnName": "NODE_PARENT",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nodeDepth",
+            "columnName": "NODE_DEPTH",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nodeOrder",
+            "columnName": "NODE_ORDER",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nodeExpend",
+            "columnName": "NODE_EXPEND",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nodeValue",
+            "columnName": "NODE_VALUE",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "NODE_ID"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "CharacterBean",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`CHAR_ID` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `CHAR_GROUP` TEXT, `CHAR_STATE` TEXT, `CHAR_TOP` TEXT, `CHAR_LETTER` TEXT, `CHAR_REFER` INTEGER NOT NULL, `CHAR_PROFILE` TEXT, `CHAR_SHOW_F` TEXT, `CHAR_SHOW_S` TEXT, `CHAR_SHOW_T` TEXT, `CHAR_DATA` TEXT, `TEMP_FLAG` TEXT, `BOOK_FLAG` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "charId",
+            "columnName": "CHAR_ID",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "charGroup",
+            "columnName": "CHAR_GROUP",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "charState",
+            "columnName": "CHAR_STATE",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "charTop",
+            "columnName": "CHAR_TOP",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "charLetter",
+            "columnName": "CHAR_LETTER",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "charRefer",
+            "columnName": "CHAR_REFER",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "charProfile",
+            "columnName": "CHAR_PROFILE",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "charShowF",
+            "columnName": "CHAR_SHOW_F",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "charShowS",
+            "columnName": "CHAR_SHOW_S",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "charShowT",
+            "columnName": "CHAR_SHOW_T",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "charData",
+            "columnName": "CHAR_DATA",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "tempFlag",
+            "columnName": "TEMP_FLAG",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "bookFlag",
+            "columnName": "BOOK_FLAG",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "CHAR_ID"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "ResourceBean",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`RESO_ID` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `RESO_SORT` TEXT, `RESO_COUNT` INTEGER NOT NULL, `RESO_REFER` INTEGER NOT NULL, `RESO_SHOW_A` TEXT, `RESO_SHOW_B` TEXT, `RESO_SHOW_C` TEXT, `RESO_SHOW_D` TEXT, `RESO_SHOW_E` TEXT, `RESO_DATA` TEXT, `TEMP_FLAG` TEXT, `BOOK_FLAG` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "resoId",
+            "columnName": "RESO_ID",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tempName",
+            "columnName": "RESO_SORT",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "resoCount",
+            "columnName": "RESO_COUNT",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "resoRefer",
+            "columnName": "RESO_REFER",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "resoShowA",
+            "columnName": "RESO_SHOW_A",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "resoShowB",
+            "columnName": "RESO_SHOW_B",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "resoShowC",
+            "columnName": "RESO_SHOW_C",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "resoShowD",
+            "columnName": "RESO_SHOW_D",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "resoShowE",
+            "columnName": "RESO_SHOW_E",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "resoData",
+            "columnName": "RESO_DATA",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "tempFlag",
+            "columnName": "TEMP_FLAG",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "bookFlag",
+            "columnName": "BOOK_FLAG",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "RESO_ID"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "StateRecord",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`STATE_ID` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `STATE_TYPE` INTEGER NOT NULL, `STATE_MAP` TEXT, `BOOK_FLAG` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "stateId",
+            "columnName": "STATE_ID",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "stateType",
+            "columnName": "STATE_TYPE",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "stateMap",
+            "columnName": "STATE_MAP",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "bookFlag",
+            "columnName": "BOOK_FLAG",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "STATE_ID"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'dd930c43060cf97abcd09b45a43af889')"
+    ]
+  }
+}
